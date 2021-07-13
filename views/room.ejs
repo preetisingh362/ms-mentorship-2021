@@ -8,9 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script>
     const ROOM_ID = "<%= roomId %>"
-    function showAlert(){
-      alert("share this room id with your peer : http://localhost:100/ " + ROOM_ID)
-    }
+    
   </script>
   
   <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
@@ -23,7 +21,7 @@
   
 </head>
 <body>
-  
+  //code for navbar
 <nav id="navbar">
   <div class="left-nav" id="flex-item">
     <div id="flex-item" class="items1"><i class="fa fa-bars" style="font-size:15px"></i></div>
@@ -35,7 +33,7 @@
         <i class="fa fa-search"></i>
      </button>
    </div>
-   <div class="rt-nav" id="flex-item" > <div class="dots" ><i class="fa fa-ellipsis-h" ></i></div>
+   <div class="rt-nav" id="flex-item" > <div class="dots" onclick="show_Name()" ><i class="fa fa-ellipsis-h" ></i></div>
   
   </div>
   
@@ -60,7 +58,7 @@
   
     
 </div>
-
+//code for chat 
 <div id="chat-area">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <h2 style="text-align: center;">Chat here !!!</h2>
@@ -68,7 +66,6 @@
       <div id="output"></div>
       <div id="feedback"></div>
   </div>
-  <input id="handle" type="text" placeholder="Type username" />
   <input id="message" type="text" placeholder="Type Message" />
   <button id="send">send</button>
 </div>
