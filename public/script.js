@@ -5,7 +5,6 @@ const myVideo = document.createElement('video')
 myVideo.muted = true
 const peers = {}
 var msg=document.getElementById('message')
-var user_name=document.getElementById('handle')
 var output=document.getElementById('output')
 feedback=document.getElementById('feedback')
 btn = document.getElementById('send')
@@ -104,7 +103,7 @@ function addVideoStream(video, stream) {
 btn.addEventListener('click', function(){
   socket.emit('chat', {
       msg: message.value,
-      user_name: handle.value
+     
   });
   console.log("chat emitted")
   message.value = "";
@@ -114,10 +113,10 @@ msg.addEventListener('keypress',function(){
 })
 socket.on('chat',function(data){
   feedback.innerHTML=' ';
-  output.innerHTML+='<p><strong><i>' + data.user_name +': </i></strong>'+data.msg +'</p>'
+  output.innerHTML+='<p><strong><i>' + user +': </i></strong>'+data.msg +'</p>'
 });
 socket.on('typing', function(data){
-  feedback.innerHTML = '<p><em>' + data.user_name + ' is typing a message...</em></p>';
+  feedback.innerHTML = '<p><em>' + user + ' is typing a message...</em></p>';
 });
 
 function openchat() {
@@ -213,3 +212,16 @@ function setMuteButton () {
   <span>Mute</span>`;
   document.getElementById("muteButton").innerHTML = html;
 };
+
+ //link to invite people
+ function InvitePeople(){
+  prompt(
+"Copy this link and send it to people you want to meet with",
+window.location.href
+)}
+//displaying user name
+function show_Name(){
+prompt(
+ "user Name :" ,user
+)
+}
