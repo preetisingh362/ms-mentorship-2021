@@ -1,4 +1,4 @@
-const socket = io.connect('http://localhost:100');
+const socket = io('/');
 const videoGrid = document.getElementById('video-grid')
 var myPeer = new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443})
 const myVideo = document.createElement('video')
