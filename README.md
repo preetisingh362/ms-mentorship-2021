@@ -8,13 +8,15 @@
 5. text chat when meeting gets over
 
 
-#tech-stack
+# Tech-stack
 1.webrtc
 2.peerjs
 3.node.js
 4.express
 5.ejs
-
+6.html
+7.css
+8.javascript
 
 # getting started
 Download this source code and open it in any editor (I used Vs-code). open teminal and run the command npm install.
