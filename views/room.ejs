@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+    function showAlert(){
+      alert("share this room id with your peer : http://localhost:100/ " + ROOM_ID)
+    }
+  </script>
+  
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>Teams-Clone</title>
+ 
+  
+    
+  
+</head>
+<body>
+  
+<nav id="navbar">
+  <div class="left-nav" id="flex-item">
+    <div id="flex-item" class="items1"><i class="fa fa-bars" style="font-size:15px"></i></div>
+    <div id="flex-item" class="items2" style="font-size:x-large;"> Microsoft Teams</div>
+  </div>
+  <div class="mid-nav" id="flex-item">
+        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+   <div class="rt-nav" id="flex-item" > <div class="dots" ><i class="fa fa-ellipsis-h" ></i></div>
+  
+  </div>
+  
+</nav>
+
+//code for sidebar
+<div class="sidebar">
+     <div class="top-sidebar">
+      <div id="top-items">
+        <i class="fa fa-fw fa-bell"></i><span>Activity</span>
+      </div>
+      <div id="top-items"><i class="fa fa-calendar"></i>Calender</div>
+      <div id="top-items"><i class="fa fa-fw fa-users"></i><span>Teams</span></div>
+      <div id="top-items" onclick="openNav()"> <i class="fa fa-comment"></i><span>  Chat</span></div>
+      <div id="top-items"> <i class="fa fa-fw fa-files-o"></i><span>Files</span></div>
+      <div id="top-items" onclick="openMain()" id="calling"><i class="fa fa-phone" ></i> <span> call</span></div>
+      <div id="top-items" ><button id="Start_call" onclick="Start_Call()">Start Call</button></div>
+      <div id="top-items" ><button id="download" disabled>Download</button></div>
+      
+               
+     </div>
+  
+    
+</div>
+
+<div id="chat-area">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="text-align: center;">Chat here !!!</h2>
+  <div id="chat-window">
+      <div id="output"></div>
+      <div id="feedback"></div>
+  </div>
+  <input id="handle" type="text" placeholder="Type username" />
+  <input id="message" type="text" placeholder="Type Message" />
+  <button id="send">send</button>
+</div>
+
+<div class="main" id="main-area">
+ 
+  <div class="main__left">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMain()">&times;</a>
+    <div class="main__videos">
+      
+      <div id="video-grid">
+        
+      </div>
+    </div>
+    <div class="main__controls">
+      <div class="main__controls_block">
+        <div
+          class="main__controls_button"
+          id="muteButton"
+          onclick="muteUnmute()"
+        >
+          <i class="fa fa-microphone"></i>
+          <span>Mute</span>
+        </div>
+        <div
+          class="main__controls_button"
+          id="playPauseVideo"
+          onclick="playStop()"
+        >
+          <i class="fa fa-video-camera"></i>
+          <span>Pause Video</span>
+        </div>
+      </div>
+    
+      <div class="main__controls_block">
+        
+        <div class="main__controls_button" >
+          <i class="fa fa-user-plus" onclick=showAlert()></i>
+          <span>Add Peer</span>
+
+        </div>
+        <div class="main__controls_button">
+          <i class="fa fa-comment" onclick="openchat()"></i>
+          <span>Chat</span>
+        </div>
+      </div>
+
+      <div class="main__controls_block">
+        <div class="main__controls_button leaveMeeting" id="leave-meeting">
+          <i class="fa fa-times"></i>
+          <span class="">Leave Meeting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+  
+</body>
+</html>
