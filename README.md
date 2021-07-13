@@ -7,6 +7,15 @@
 4. text chat when user connected
 5. text chat when meeting gets over
 
+
+#tech-stack
+1.webrtc
+2.peerjs
+3.node.js
+4.express
+5.ejs
+
+
 # getting started
 Download this source code and open it in any editor (I used Vs-code). open teminal and run the command npm install.
 This will install all the dependencies installed in package.json file into your system .(Make sure you have node js already installed in your device).
