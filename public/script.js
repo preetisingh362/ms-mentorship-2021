@@ -1,6 +1,7 @@
+//declaring variables
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid')
-var myPeer = new Peer({host:'peerjs-server.herokuapp.com', secure:true, port:443})
+var myPeer = new Peer({path:'/', secure:true, port:443})
 const myVideo = document.createElement('video')
 myVideo.muted = true
 const peers = {}
@@ -10,7 +11,7 @@ feedback=document.getElementById('feedback')
 btn = document.getElementById('send')
 
 let myVideoStream;
-//function Start_Call(){
+
 var getUserMedia =
   navigator.getUserMedia ||
   navigator.webkitGetUserMedia ||
